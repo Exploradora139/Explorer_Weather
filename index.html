@@ -2,9 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <title>Explorer Weather App</title>
   </head>
   <body>
@@ -31,17 +37,17 @@
           <div>
             <h1 id="city">Mexico City</h1>
             <p>
-              <span id="time">Tuesday 10:00</span>,
-              <span id="description"> Cloudy</span>
+              <span id="time"></span>,
+              <span id="description"></span>
               <br />
               Humidity:
-              <strong id="humidity">72</strong>, Wind:
-              <strong id="wind-speed">13mph</strong>
+              <strong id="humidity"></strong>, Wind:
+              <strong id="wind-speed"></strong>
             </p>
           </div>
           <div class="weather-app-temperature-info">
-            <div id="icon">&#9729;</div>
-            <div class="weather-app-temperature" id="temperature">72</div>
+            <div id="icon"></div>
+            <div class="weather-app-temperature" id="temperature"></div>
             <div class="weather-app-unit">°F</div>
           </div>
         </div>
@@ -65,5 +71,6 @@
         </a>
       </footer>
     </div>
+    <script src="src/script.js"></script>
   </body>
 </html>
