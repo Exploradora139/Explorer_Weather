@@ -8,51 +8,60 @@
     <title>Explorer Weather App</title>
   </head>
   <body>
-    <header>
-      <form>
-        <input
-          type="search"
-          id="search-input"
-          placeholder="Enter a city..."
-          required
-        />
-        <input type="submit" id="search-button" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1>Mexico City</h1>
-        <p>
-          Tuesday 10:00, cloudy
-          <br />
-          Humidity:
-          <strong id="humidity">72</strong>, Wind:
-          <strong id="wind-speed">13mph</strong>
-        </p>
-      </div>
-      <div class="weather-temperature">
-        <div id="icon">&#9729;</div>
-        <div class="weather-temperature" id="temperature">72</div>
-        <div class="weather-unit">°F</div>
-      </div>
-    </main>
+    <div class="weather-app">
+      <header>
+        <form>
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            required
+            id="search-input"
+            class="search-input"
+          />
+          <input
+            type="submit"
+            value="Search"
+            id="search-button"
+            class="search-button"
+          />
+        </form>
+      </header>
+      <main>
+        <div class="weather-app-data">
+          <h1 id="city">Mexico City</h1>
+          <p>
+            <span id="time">Tuesday 10:00</span>,
+            <span id="description"> Cloudy</span>
+            <br />
+            Humidity:
+            <strong id="humidity">72</strong>, Wind:
+            <strong id="wind-speed">13mph</strong>
+          </p>
+        </div>
+        <div class="weather-app-temperature-info">
+          <div id="icon">&#9729;</div>
+          <div class="weather-app-temperature" id="temperature">72</div>
+          <div class="weather-app-unit">°F</div>
+        </div>
+      </main>
 
-    <footer>
-      Coded by
-      <a href="https://github.com/Exploradora139" target="_blank">
-        Dora Lopez
-      </a>
-      ,
-      <a
-        href="https://github.com/Exploradora139/Explorer_Weather"
-        target="_blank"
-      >
-        open-sourced on GitHub
-      </a>
-      and Website hosted
-      <a href="https://explorerweather.netlify.app/" target="_blank">
-        on Netlify
-      </a>
-    </footer>
+      <footer>
+        Coded by
+        <a href="https://github.com/Exploradora139" target="_blank">
+          Dora Lopez
+        </a>
+        ,
+        <a
+          href="https://github.com/Exploradora139/Explorer_Weather"
+          target="_blank"
+        >
+          open-sourced on GitHub
+        </a>
+        and Website hosted
+        <a href="https://explorerweather.netlify.app/" target="_blank">
+          on Netlify
+        </a>
+      </footer>
+    </div>
   </body>
 </html>
