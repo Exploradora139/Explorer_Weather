@@ -71,12 +71,14 @@ strong {
 }
 
 .weather-app-icon {
+  font-weight: bold;
   height: 88px;
   width: 88px;
 }
 
 .weather-app-temperature {
   font-size: 88px;
+  font-weight: bold;
   line-height: 88px;
 }
 
