@@ -1,4 +1,4 @@
-function searchWeather(response) {
+function refreshWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
@@ -10,13 +10,12 @@ function searchWeather(response) {
   let iconElement = document.querySelector("#icon");
 
   cityElement.innerHTML = response.data.city;
-  timeElement.innerHTML = FormDate(date);
+  timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
-  humidityElement.innerHTML = "${response.data.temperature.humidity}%";
-  windSpeedElement.innerHTML = "${response.data.wind.speed}mph";
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windSpeedElement.innerHTML = `${response.data.wind.speed}mph`;
   temperatureElement.innerHTML = Math.round(temperature);
-  iconElement.innerHTML =
-    '<img="${response.data.condition.icon-url}" class="weather-app-icon"\>';
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 }
 
 function formatDate(date) {
@@ -34,22 +33,21 @@ function formatDate(date) {
   let day = days[date.getDay()];
 
   if (minutes < 10) {
-    minutes = "0${minutes}";
+    minutes = `0${minutes}`;
   }
 
-  return "${day} ${hours}: ${minutes}";
+  return `${day} ${hours}:${minutes}`;
 }
 
 function searchCity(city) {
-  let apiKey = "36399t92b73b5o4fa0b8a2cb798d68aa";
-  let apiUrl =
-    "https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial";
-  axios.get(apiUrl).then(searchWeather);
+  let apiKey = "b2a5adcct04b33178913oc335f405433";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(refreshWeather);
 }
 
 function handleSearchSubmit(event) {
   event.preventDefault();
-  let searchInput = document.querySelector("#search-input");
+  let searchInput = document.querySelector("#search-form-input");
 
   searchCity(searchInput.value);
 }
