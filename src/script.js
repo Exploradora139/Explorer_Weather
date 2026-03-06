@@ -16,7 +16,7 @@ function searchWeather(response) {
   windSpeedElement.innerHTML = "${response.data.wind.speed}mph";
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML =
-    '<img src="${response.data.condition.icon_url}" class= "weather-app-icon" />';
+    '<img="${response.data.condition.icon-url}" class="weather-app-icon"\>';
 }
 
 function formatDate(date) {
@@ -41,9 +41,10 @@ function formatDate(date) {
 }
 
 function searchCity(city) {
-  let apiKey = "b2a5adcct04b33178913oc335f405433";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-  axios.get(apiUrl).then(refreshWeather);
+  let apiKey = "36399t92b73b5o4fa0b8a2cb798d68aa";
+  let apiUrl =
+    "https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial";
+  axios.get(apiUrl).then(searchWeather);
 }
 
 function handleSearchSubmit(event) {
@@ -53,7 +54,7 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-let searchFormElement = document.querySelector("#search-button");
+let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Mexico City");
