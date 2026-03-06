@@ -9,11 +9,11 @@ a {
 
 .weather-app {
   background: white;
-  border-radius: 16px;
+  border-radius: 15px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
-  margin: 40px auto;
+  margin: 50px auto;
   max-width: 500px;
-  padding: 30px;
+  padding: 35px;
 }
 
 header {
